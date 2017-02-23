@@ -49,9 +49,9 @@
 	const area = document.getElementById('area');
 	const button = document.getElementById('button');
 
-	const num_hex = __webpack_require__(2).randomBytes(8).toString('hex');
+	let num_hex = __webpack_require__(2).randomBytes(8).toString('hex');
 
-	let attack = parseInt(num_hex.slice(-5), 16);
+	let attack = parseInt(num_hex.slice(-4), 16);
 	let defense = parseInt(num_hex.slice(-6, -3), 16);
 	let defense_penetration = parseInt(num_hex.slice(-9, -6), 16);
 	let damage = dc.effectiveDamage(attack, defense, defense_penetration);
@@ -61,34 +61,48 @@
 
 
 	//console.log(typeof parseInt(attack, 16).valueOf()); // 文字列を数値化するのに手こずった名残
-
-
+	function min_HP(remaining) {
+	  if (remaining < 0) {
+	    return 0;
+	  } else {
+	    return remaining;
+	  }
+	}
+	console.log(min_HP(MAOU_HP));
 
 	/*=== 攻撃ボタンを押したときの動作 ===*/
 	button.onclick = () => {
-	  MAOU_HP -= damage;
-	  
-	  if (MAOU_HP > 0){
+	  if (MAOU_HP > 0) {
+	    num_hex = __webpack_require__(2).randomBytes(8).toString('hex');
+	    console.log(num_hex);
+	    attack = parseInt(num_hex.slice(-4), 16);;
+	    defense = parseInt(num_hex.slice(-6, -3), 16);;
+	    defense_penetration = parseInt(num_hex.slice(-9, -6), 16);;
+	    damage = dc.effectiveDamage(attack, defense, defense_penetration);;
+
+	    MAOU_HP -= damage;
+
 	    const write = document.createElement('p');
-	    write.innerHTML = '<p>'+ turn_num + 'ターン目<br />' +
-	      '<br />勇者折原のステータス: 攻撃力= ' + attack + ', 防御貫通力= ' + defense_penetration +
+	    write.innerHTML = turn_num + 'ターン目<br />' +
+	      '<br />勇者折原のステータス: 攻撃力= ' + attack + ', 防御貫通力 = ' + defense_penetration +
 	      '<br />勇者瀧本のステータス(瀕死): 攻撃力= 0, 防御貫通力= 0' +
-	      '<br />魔王吉村のステータス: 防御力= ' + defense + '<br />勇者折原の攻撃。魔王吉村に' + damage + 'のダメージ。</p>' +
-	      '<span style="color:#800000; font-weight: bold;">残りのHP= ' + MAOU_HP + '</span>';
+	      '<br />魔王吉村のステータス: 防御力= ' + defense + '<br />勇者折原の攻撃。魔王吉村に' + damage + 'のダメージ。' +
+	      '<span style="color:#800000; font-weight: bold;">残りのHP= ' + min_HP(MAOU_HP) + '</span>';
 	    area.appendChild(write);
 	    turn_num++;
-	 
-	  }else {
+	  } else {
 	    const write = document.createElement('p');
-	    write.innerHTML = '<p>'+ turn_num + 'ターン目<br />' +
+	    write.innerHTML = turn_num + 'ターン目<br />' +
 	      '<br />勇者折原のステータス: 攻撃力= ' + attack + ', 防御貫通力= ' + defense_penetration +
 	      '<br />勇者瀧本のステータス(瀕死): 攻撃力= 0, 防御貫通力= 0' +
-	      '<br />魔王吉村のステータス: 防御力= ' + defense + '<br />勇者折原の攻撃。魔王吉村に' + damage + 'のダメージ。</p>' +
-	      '<span style="color:#800000; font-weight: bold;">残りのHP= ' + MAOU_HP + '</span>' +
+	      '<br />魔王吉村のステータス: 防御力= ' + defense + '<br />勇者折原の攻撃。魔王吉村に' + damage + 'のダメージ。' +
+	      '<span style="color:#800000; font-weight: bold;">残りのHP= ' + min_HP(MAOU_HP) + '</span>' +
 	      '<span style="color:#800000; font-weight: bold;"><br />魔王吉村をたおした！</span>';
 	    area.appendChild(write);
+	    button.disabled = true;
 	  }
 	}
+
 	/*=== 攻撃ボタンを押したときの動作 ===*/
 
 
