@@ -6,5 +6,4 @@ document.writeln(
 );
 
 document.writeln(
-    `<p>${require('crypto').randomBytes(8).toString('hex')}</p>`
-);
+    `<p>${require('crypto').randomBytes(8).toString('hex')}</p>`);
