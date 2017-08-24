@@ -1,1 +1,6 @@
 node_mocules/
+.eslintignore
+.idea/
+intro-curriculum-4006.iml
+node_modules/
+package-lock.json
