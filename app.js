@@ -9,8 +9,8 @@ var session = require('express-session');
 var passport = require('passport');
 var GitHubStrategy = require('passport-github2').Strategy;
 
-var GITHUB_CLIENT_ID = 'f756acb8748f85e2014b';
-var GITHUB_CLIENT_SECRET = '0fc57f6660bd5da78873eeacda8c131859b64f30';
+var GITHUB_CLIENT_ID = 'c9ff42c4b6deee55e5ee';
+var GITHUB_CLIENT_SECRET = 'dd89be50f5f94f9c5e25f7153fee417ab8a6f0f7';
 
 passport.serializeUser(function (user, done) {
   done(null, user);
@@ -51,7 +51,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({ secret: '417cce55dcfcfaeb', resave: false, saveUninitialized: false }));
+app.use(session({ secret: 'b2482d9434e322cc', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
