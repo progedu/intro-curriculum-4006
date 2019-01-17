@@ -1,6 +1,7 @@
 module.exports = {
   context: __dirname + '/app',
   entry: './entry',
+  //target: 'node',
   mode: 'none',
   output: {
     path: __dirname + '/public/javascripts',

@@ -97,9 +97,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // Node.jsのcryptoモジュールをクライアントサイドのJavaScriptで実行する
 
 document.writeln('<p>攻撃力 100, 防御 50, 防御貫通 30 のダメージは、' + damage_calc__WEBPACK_IMPORTED_MODULE_0___default.a.effectiveDamage(100, 50, 30) + '</p>');
 document.writeln('<p>' + crypto__WEBPACK_IMPORTED_MODULE_1___default.a.randomBytes(8).toString('hex') + '</p>');
+document.writeln('<p>怒りのハッシュアルゴリズム一覧</p><p>' + crypto__WEBPACK_IMPORTED_MODULE_1___default.a.getHashes() + '</p>');
+/**
+ *  失敗作です；；
+ *  【3章2節：集計処理を行うプログラム】をクライアントサイドで実行してみる 
+import fs from 'fs';
+import readline from 'readline';
+const rs = fs.ReadStream('./popu-pref.csv');
+const rl = readline.createInterface({'input': rs, 'output': {} });
+rl.on('line', (lineString) => {
+  console.log(lineString);
+});
+
+*/
 
 /***/ }),
 /* 1 */
