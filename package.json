@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "node_modules/.bin/webpack"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -13,6 +14,7 @@
     "express-session": "^1.15.6",
     "helmet": "^3.8.2",
     "http-errors": "~1.6.2",
+    "moment-timezone": "^0.5.23",
     "morgan": "~1.9.0",
     "passport": "^0.3.2",
     "passport-github2": "^0.1.9",
