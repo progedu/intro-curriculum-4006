@@ -97,8 +97,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-document.writeln('<p>攻撃力 100, 防御 50, 防御貫通 30 のダメージは、' + damage_calc__WEBPACK_IMPORTED_MODULE_0___default.a.effectiveDamage(100, 50, 30) + '</p>');
 
+document.writeln('<p>攻撃力 100, 防御 50, 防御貫通 30 のダメージは、' + damage_calc__WEBPACK_IMPORTED_MODULE_0___default.a.effectiveDamage(100, 50, 30) + '</p>');
 document.writeln('<p>' + crypto__WEBPACK_IMPORTED_MODULE_1___default.a.randomBytes(8).toString('hex') + '</p>');
 
 /***/ }),
