@@ -1,9 +1,12 @@
 module.exports = {
   context: __dirname + '/app',
-  entry: './entry',
+  //entry: {a:'./entry',b:'./hextest'},
+  entry: ['./entry','./hextest'],
+  //entry: './entry',
   mode: 'none',
   output: {
     path: __dirname + '/public/javascripts',
+    //filename: '[name].bundle.js'
     filename: 'bundle.js'
   },
   module: {
