@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var root = document.getElementById('root');
-root.innerHTML = '<p>攻撃力 100, 防御 50, 防御貫通 30 のダメージは、' + damage_calc__WEBPACK_IMPORTED_MODULE_0___default.a.effectiveDamage(100, 50, 30) + '</p>' + '<p id="randomNum" >cryptoライブラリによる乱数、' + crypto__WEBPACK_IMPORTED_MODULE_1___default.a.randomBytes(8).toString('hex') + '</p>';
+root.innerHTML = '<p>攻撃力 100, 防御 50, 防御貫通 30 のダメージは、' + damage_calc__WEBPACK_IMPORTED_MODULE_0___default.a.effectiveDamage(100, 50, 30) + '</p>' + '<p>cryptoライブラリによる乱数、' + crypto__WEBPACK_IMPORTED_MODULE_1___default.a.randomBytes(8).toString('hex') + '</p>';
 
 /***/ }),
 /* 1 */
