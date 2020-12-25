@@ -5,7 +5,8 @@ block content
   p Welcome to #{title}
   if user
     p Hello, #{user.username}
+    div#root
+    div#rootSecond
     a(href="/logout") Logout
   else
     a(href="/login") Login
-  div#root
