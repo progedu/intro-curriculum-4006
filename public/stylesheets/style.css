@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+#root {
+  color: #1100ff;
+}
+
+.roots {
+  color: #f700ff;
+}
